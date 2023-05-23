@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "07a98b56-3b22-439e-9d4a-79368bacb625",
+		"name": "e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20665905"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Mahmoud\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/6335c003b1e0693dd2516f0a"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Zin\",\r\n    \"email\":\"Zin@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Zin@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Any BOOK\",\r\n    \"desc\":\"The Black Book is a print on demand volume consisting of 740 pages that are completely printed in black on both sides. Statement.\",\r\n    \"img\":\"https://th.bing.com/th/id/OIP.oGvN13OIGKgygcBcsCtStQHaJe?pid=ImgDet&rs=1\",\r\n    \"categories\":\"BOOK\",\r\n    \"size\":\"220\",\r\n    \"color\":\"black\",\r\n    \"price\":\"30$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/products/create/new"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll products",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/products/delete/63384e6ae64ad2f48ad2cd24"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "add order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6335c003b1e0693dd2516f0a\",\r\n    \"products\":[\r\n        {\r\n            \"productId\":\"6335dcbfb89005de227012cb\",\r\n            \"quentity\":4\r\n        }\r\n    ],\r\n    \"amount\":3,\r\n    \"address\":\"Any\",\r\n    \"status\":\"new\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/orders/add"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/orders/delete/633848eca964fac2d49696de"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "cart Creatr",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"userId\":\"6335c003b1e0693dd2516f0a\",\r\n    \"products\":\r\n        {\r\n            \"productId\":\"6335dcbfb89005de227012cb\",\r\n            \"quentity\":4\r\n        },\r\n    \r\n    \"amount\":3,\r\n    \"address\":\"Elmenofia\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/carts/create"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/carts"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
